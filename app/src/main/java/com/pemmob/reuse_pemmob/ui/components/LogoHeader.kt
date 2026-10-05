@@ -1,7 +1,6 @@
 package com.pemmob.reuse_pemmob.ui.components
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -10,22 +9,17 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Recycling
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.pemmob.reuse_pemmob.R
-import com.pemmob.reuse_pemmob.ui.theme.BrandBlueGradient
 
 @Composable
 fun LogoHeader(
@@ -38,20 +32,13 @@ fun LogoHeader(
             .padding(horizontal = 16.dp, vertical = 12.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Box(
+        Image(
+            painter = painterResource(id = R.drawable.ic_launcher_foreground),
+            contentDescription = "Logo ReUse",
             modifier = Modifier
                 .size(42.dp)
                 .clip(RoundedCornerShape(12.dp))
-                .background(BrandBlueGradient),
-            contentAlignment = Alignment.Center
-        ) {
-            Icon(
-                painter = painterResource(id = R.drawable.ic_launcher_monochrome),
-                contentDescription = "Logo ReUse",
-                tint = Color.White,
-                modifier = Modifier.size(26.dp)
-            )
-        }
+        )
 
         Spacer(modifier = Modifier.width(12.dp))
 
@@ -72,3 +59,4 @@ fun LogoHeader(
         }
     }
 }
+
